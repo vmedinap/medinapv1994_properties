@@ -1,9 +1,9 @@
 configuration:
-  environment: dev
+  environment: default
 
 spring:
   application:
-    name: jwe-generator
+    name: payment-service
   datasource:
     url: jdbc:postgresql://localhost:5432/medinapv1994_db
     username: admin
@@ -13,7 +13,7 @@ spring:
     uri: http://localhost:8888
 
 server:
-  port: 8081
+  port: 8091
 
 eureka:
   client:
@@ -30,7 +30,5 @@ jwe:
     filename: pkcs12Certificate.p12
     alias: alias
     pwd: pkcs12pwd
-  signingkey:
-    filename: private_key.der
   verifierkey:
     filename: public_key.der

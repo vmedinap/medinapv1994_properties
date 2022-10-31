@@ -1,5 +1,5 @@
 configuration:
-  environment: dev
+  environment: default
 
 spring:
   application:
@@ -49,4 +49,3 @@ jwe:
     filename: private_key.der
   verifierkey:
     filename: public_key.der
-

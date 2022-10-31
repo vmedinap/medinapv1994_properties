@@ -1,5 +1,5 @@
 configuration:
-  environment: dev
+  environment: default
 
 spring:
   application:
