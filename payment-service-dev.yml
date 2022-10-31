@@ -1,0 +1,34 @@
+configuration:
+  environment: dev
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/medinapv1994_db
+    username: admin
+    password: admin
+  config:
+    import: 'optional:configserver:'
+    uri: http://localhost:8088
+
+server:
+  port: 8091
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    org:
+      hibernate: debug
+
+jwe:
+  certificate:
+    filename: pkcs12Certificate.p12
+    alias: alias
+    pwd: pkcs12pwd
+  verifierkey:
+    filename: public_key.der

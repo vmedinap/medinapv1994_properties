@@ -1,0 +1,28 @@
+configuration:
+  environment: dev
+
+spring:
+  application:
+    name: oauth-server
+  config:
+    import: 'optional:configserver:'
+    uri: http://localhost:8088
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+oauth:
+  jwt:
+    key: jwt-signature-key-tfg-vmp
+  client:
+    frontend:
+      name: frontend
+      pwd: 12345
+    payment:
+      name: payment-service
+      pwd: 12345
