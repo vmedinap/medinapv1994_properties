@@ -9,8 +9,7 @@ spring:
     username: admin
     password: admin
   config:
-    import: 'optional:configserver:'
-    uri: http://localhost:8088
+    import: 'optional:configserver:http://localhost:8088'
 
 server:
   port: 8091
