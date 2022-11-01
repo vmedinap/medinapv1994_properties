@@ -5,7 +5,7 @@ spring:
   application:
     name: payment-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/tfg
+    url: jdbc:postgresql://localhost:5432/medinapv1994_db
     username: admin
     password: admin
   config:
