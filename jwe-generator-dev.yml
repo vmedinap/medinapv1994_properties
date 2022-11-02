@@ -8,8 +8,6 @@ spring:
     url: jdbc:postgresql://postgres-db:5432/medinapv1994_db
     username: admin
     password: admin
-  profiles:
-    active: dev
   config:
     import: 'optional:configserver:http://config-server:8888'
 
