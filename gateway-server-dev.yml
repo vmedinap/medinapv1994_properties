@@ -1,0 +1,51 @@
+configuration:
+  environment: dev
+
+spring:
+  application:
+    name: gateway-server
+  config:
+    import: 'optional:configserver:http://localhost:8088'
+  cloud:
+    gateway:
+      routes:
+        - id: jwe-generator
+          uri: lb://jwe-generator
+          predicates:
+            - Path=/api/usuarios/**
+          filters:
+            - StripPrefix=2
+        - id: oauth-server
+          uri: lb://oauth-server
+          predicates:
+            - Path=/api/oauth/**
+          filters:
+            - StripPrefix=2
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/api/payments/**
+          filters:
+            - StripPrefix=2
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+oauth:
+  jwt:
+    key: jwt-signature-key-tfg-vmp
+
+jwe:
+  certificate:
+    filename: pkcs12Certificate.p12
+    alias: alias
+    pwd: pkcs12pwd
+  signingkey:
+    filename: private_key.der
+  verifierkey:
+    filename: public_key.der
+
