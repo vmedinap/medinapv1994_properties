@@ -1,19 +1,9 @@
-configuration:
-  environment: default
-
 spring:
   application:
     name: oauth-server
-  config:
-    import: 'optional:configserver:http://config-server:8888'
 
 server:
   port: 8080
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
 
 oauth:
   jwt:
