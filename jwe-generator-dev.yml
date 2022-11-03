@@ -1,6 +1,3 @@
-configuration:
-  environment: dev
-
 spring:
   application:
     name: jwe-generator
